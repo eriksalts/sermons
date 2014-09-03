@@ -1,0 +1,112 @@
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/base";
+
+
+@mixin sermon-boxes{
+	/*height:120px;*/
+	/*width: 135px;*/
+	@include margin (20px 0 5px 0);
+}
+@mixin backgroundimage{
+	/*@include fill-parent;*/
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+body{
+	@include fill-parent;
+	@include backgroundimage;
+	@include background-image(url('/images/soundboard.jpg'));
+	/*background-color: gray;*/
+}
+	
+.logo{
+	margin: 10px;
+}
+	.intro-text {
+
+		@include outer-container;
+		border: 2px solid gray;
+	  $intro-text-width: 60%;
+	  text-align: center;
+		@include margin(20px 180px 20px 180px);
+		height: 100%;
+		background: (255,255,255,0.4);
+		
+	  h2 {
+	    font-family: $serif;
+	    font-weight: 800;
+	    margin-bottom: .3em;
+	    color:white;
+	    text-shadow: 1px 0px 2px rgba(150, 150, 150, 1);
+	    @include media($large-screen) {
+	      font-size: 3em;
+	      margin-bottom: .4em;
+	    }
+	  }
+
+	  h3 {
+	    background: $base-accent-color;
+	    color: white;
+	    display: inline-block;
+	    font-size: .9em;
+	    font-weight: 800;
+	    margin-bottom: 2em;
+	    padding: 3px 8px;
+	    text-transform: uppercase;
+
+	    @include media($large-screen) {
+	      margin-bottom: 3.3em;
+	    }
+	  }
+
+	  h4 {
+	    color: lighten($base-font-color, 20);
+	    font-size: 1.3em;
+	    font-weight: 300;
+	    line-height: 1.4em;
+	    margin: 0 auto 1em;
+
+	    @include media($large-screen) {
+	      font-size: 1.7em;
+	      line-height: 1.35em;
+	      margin: 0 auto 1em;
+	      width: $intro-text-width;
+	    }    
+	  }
+	}
+.audio{
+	@include span-columns(12);
+	#audio{
+		@include span-columns(5 of 12);
+		display: talble;
+		margin: 50px 30%;
+		/*margin: 30px 100px 50px 100px;*/
+	}
+}
+.sermon-index{
+	@include outer-container;
+	.number-box{
+
+		@include sermon-boxes;
+		@include backgroundimage;
+		@include background-image(url('/images/PsalmsTitle.jpg'));
+		/*opacity: $opacity;*/
+		@include span-columns(3);
+		@include omega(4n);
+		p{
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 80px;
+			opacity: 0.8;
+		}
+		a{
+			color: black;
+		}
+	}
+	
+}
+
